@@ -1,0 +1,145 @@
+:root {
+  --clr-theme: hsl(259, 100%, 65%);
+  --clr-black: hsl(0, 0%, 8%);
+
+  --clr-white: #fff;
+
+  --clr-gray-800: #ddd;
+
+  --clr-light-red: #ff5757;
+}
+
+body {
+  background: linear-gradient(#f2f2f2, #eaeaea) no-repeat;
+  min-height: 100vh;
+  font-family: Poppins, sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  max-width: 1000px;
+  padding: 5em;
+  padding-inline: clamp(1em, 5vw, 5em);
+  margin: clamp(1em, 5vw, 10em);
+  background-color: var(--clr-white);
+  border-radius: 2em 2em clamp(5em, 20vw, 15em) 2em;
+  /* border: 1px solid green; */
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-field {
+  width: 30%;
+}
+
+.form-blank-space {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .input-field,
+  .form-blank-space {
+    width: 22%;
+  }
+
+  .form-blank-space {
+    display: block;
+  }
+}
+
+.input-field label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 0.25em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* Removes the default arrows from input of type number*/
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-field input[type="number"] {
+  width: 100%;
+  text-transform: uppercase;
+  border: 1px solid var(--clr-gray-800);
+  padding: 0.5em 0em 0.5em 0.25em;
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  font-weight: 800;
+  border-radius: 10px;
+}
+
+.input-field input[type="number"]:hover {
+  border-color: var(--clr-black);
+  cursor: pointer;
+}
+
+.form-hint {
+  font-size: 0.6rem;
+  color: var(--clr-light-red);
+  display: none;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em auto;
+  position: relative;
+}
+.divider::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin: auto;
+  background-color: #e8e8e8;
+  z-index: 0;
+}
+
+@media (min-width: 800px) {
+  .divider {
+    justify-content: flex-end;
+  }
+}
+
+.btn {
+  border: none;
+  background-color: var(--clr-theme);
+  display: inline-block;
+  padding: 1.25em;
+  border-radius: 100rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.btn:hover {
+  background-color: var(--clr-black);
+}
+
+/* Output section */
+
+.output__p {
+  font-size: clamp(3rem, 10vw, 5rem);
+  font-weight: 900;
+}
+
+.output__span {
+  color: var(--clr-theme);
+  font-weight: 900;
+}
